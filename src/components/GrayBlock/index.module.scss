@@ -1,0 +1,21 @@
+.grayBlock {
+	.block {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		border-top-right-radius: 1rem;
+
+		@media #{$mq-sm-min} {
+			border-top-right-radius: 2rem;
+		}
+
+		@media #{$mq-md-min} {
+			border-top-right-radius: 3rem;
+			text-align: center;
+		}
+
+		@media #{$mq-lg-min} {
+			border-top-right-radius: 4rem;
+		}
+	}
+}

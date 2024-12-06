@@ -1,0 +1,75 @@
+.testimonials {
+    .banner {
+        & :global {
+            .cover {
+                object-position: top center;
+            }
+        }
+    }
+
+    .videoTestimonials {
+        &:before {
+            @include gradient-bottom($gray-lighter, 50%)
+        }
+
+        .grid {
+            display: grid;
+            gap: 1rem;
+
+            @media #{$mq-sm-min} {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            @media #{$mq-xl-min} {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @media #{$mq-2xl-min} {
+                gap: 2rem;
+            }
+        }
+    }
+
+    .reviews {
+        .top {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: .75rem;
+
+            @media #{$mq-sm-min} {
+                align-items: center;
+                text-align: center;
+            }
+
+            .google {
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+                margin-top: -.5rem;
+
+                @media #{$mq-sm-min} {
+                    margin-top: -.75rem;
+                }
+
+                p {
+                    color: $gray-medium;
+                }
+
+                svg {
+                    width: 6rem;
+                    height: auto;
+
+                    @media #{$mq-sm-min} {
+                        width: 8rem;
+                    }
+                }
+            }
+        }
+
+        .bottom {
+
+        }
+    }
+}

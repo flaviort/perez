@@ -1,0 +1,23 @@
+.marquee {
+	overflow: hidden;
+
+	.wrapper {
+		display: flex;
+		white-space: nowrap;
+		gap: 1rem;
+
+		@media #{$mq-md-min} {
+			gap: 2rem;
+		}
+
+		@media #{$mq-sm-max} {
+			font-size: 2.5rem;
+		}
+
+		span {
+			&:nth-child(even) {
+				color: $green;
+			}
+		}
+	}
+}

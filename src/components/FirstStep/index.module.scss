@@ -1,0 +1,28 @@
+.firstStep {
+	.wrapper {
+		background-color: $green;
+		color: $white;
+		border-top-right-radius: 1rem;
+		padding: var(--smaller);
+		display: flex;
+		gap: var(--smallest);
+		flex-direction: column;
+
+		@media #{$mq-sm-min} {
+			border-top-right-radius: 2rem;
+			padding: var(--small);
+		}
+
+		@media #{$mq-lg-min} {
+			flex-direction: row;
+			gap: var(--small);
+			align-items: center;
+		}
+
+		h2 {
+			@media #{$mq-lg-min} {
+				white-space: nowrap;
+			}
+		}
+	}
+}

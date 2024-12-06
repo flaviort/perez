@@ -1,0 +1,332 @@
+.aboutUs {
+    .banner {
+        position: relative;
+        overflow: hidden;
+
+        .leaf {
+            position: absolute;
+            right: -5rem;
+            transform: rotate(120deg);
+            width: 10rem;
+            color: $green;
+
+            @media #{$mq-xl-max} {
+                display: none;
+            }
+        }
+
+        .leafOutline {
+            position: absolute;
+            top: 1rem;
+            left: -2rem;
+            width: 6rem;
+
+            @media #{$mq-md-min} {
+                top: 2rem;
+                left: -3rem;
+                width: 8rem;
+            }
+
+            @media #{$mq-lg-min} {
+                top: 7rem;
+            }
+        }
+
+        .left {
+            position: relative;
+
+            .leafInner {
+                position: absolute;
+                z-index: 2;
+                bottom: -2rem;
+                right: 0;
+                color: $green;
+                width: 4rem;
+
+                @media #{$mq-md-min} {
+                    bottom: 0;
+                    right: 1rem;
+                }
+
+                @media #{$mq-lg-min} {
+                    bottom: .5rem;
+                    right: .5rem;
+                }
+            }
+
+            .photo {
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+                display: block;
+                width: 100%;
+                aspect-ratio: 1;
+                min-height: 100%;
+                border-radius: 1rem;
+                border-top-right-radius: 0;
+
+                @media #{$mq-xs-min} {
+                    aspect-ratio: 4 / 3;
+                }
+
+                @media #{$mq-md-min} {
+                    aspect-ratio: 4 / 2.75;
+                    border-radius: 2rem;
+                    border-top-right-radius: 0;
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+
+            @media #{$mq-md-max} {
+                padding-top: var(--smaller);
+            }
+
+            .wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    }
+
+    .about {
+        @media #{$mq-sm-max} {
+            background-color: $green;
+            margin: var(--small) 0;
+        }
+
+        .greenWrapper {
+            @media #{$mq-sm-min} {
+                border-top-right-radius: 1rem;
+            }
+
+            @media #{$mq-lg-min} {
+                border-top-right-radius: 2rem;
+            }
+
+            .title {
+                @media #{$mq-sm-min} {
+                    display: block;
+                    text-align: center;
+                    margin: 0 auto;
+                }
+            }
+
+            .left {
+                display: flex;
+                align-items: center;
+                padding-top: var(--smaller);
+
+                @media #{$mq-lg-min} {
+                    padding-right: 2rem;
+                    padding-top: 0;
+                }
+
+                @media #{$mq-xl-min} {
+                    padding-right: 4rem;
+                }
+            }
+
+            .right {
+                .leaf {
+                    position: absolute;
+                    z-index: 2;
+                    top: -4rem;
+                    right: 0;
+                    color: $gray-darker;
+                    width: 5rem;
+
+                    @media #{$mq-xs-min} {
+                        top: -1.5rem;
+                        row-gap: -.5rem;
+                    }
+
+                    @media #{$mq-md-min} {
+                        width: 8rem;
+                        top: -6rem;
+                        right: 0;
+                    }
+                }
+
+                .photo {
+                    position: relative;
+                    overflow: hidden;
+                    display: block;
+                    width: 100%;
+                    aspect-ratio: 4 / 3;
+                    border-radius: 1rem;
+                    border-top-right-radius: 0;
+                    min-height: 100%;
+
+                    @media #{$mq-lg-min} {
+                        border-radius: 2rem;
+                        border-top-right-radius: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .approach {
+        .gradient {
+            position: absolute;
+            z-index: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, $gray-lightest 0%, rgba($gray-lightest, 0) 100%);
+        }
+
+        .left {
+            position: relative;
+
+            .leafTop {
+                position: absolute;
+                z-index: 2;
+                top: -1rem;
+                left: -.5rem;
+                width: 2.5rem;
+                transform: rotate(-70deg);
+
+                @media #{$mq-md-min} {
+                    width: 4rem;
+                    left: -1rem;
+                }
+            }
+
+            .leafBottom {
+                position: absolute;
+                z-index: 2;
+                right: 35%;
+                bottom: -1rem;
+                width: 3.5rem;
+                color: $green;
+
+                @media #{$mq-md-min} {
+                    width: 5rem;
+                    bottom: -2rem;
+                }
+            }
+
+            .photoFront {
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+                display: block;
+                width: 60%;
+                height: 70vw;
+                border-radius: 1rem;
+                border-top-right-radius: 0;
+
+                @media #{$mq-md-min} {
+                    height: 100%;
+                    border-radius: 2rem;
+                    border-top-right-radius: 0;
+                }
+            }
+
+            .photoBack {
+                position: absolute;
+                overflow: hidden;
+                z-index: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+                width: 50%;
+                height: 80%;
+                border-radius: 1.5rem;
+                border-top-right-radius: 0;
+            }
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: var(--smallest);
+            padding-top: var(--smaller);
+
+            @media #{$mq-md-min} {
+                padding-left: 2rem;
+                padding-top: 0;
+            }
+
+            @media #{$mq-xl-min} {
+                padding-left: 3rem;
+            }
+        }
+    }
+
+    .vision {
+        .left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: var(--smallest);
+
+            @media #{$mq-md-min} {
+                padding-right: 2rem;
+            }
+
+            @media #{$mq-xl-min} {
+                padding-right: 3rem;
+            }
+        }
+
+        .right {
+            position: relative;
+
+            .leafTop {
+                position: absolute;
+                z-index: 2;
+                top: -1rem;
+                left: -.5rem;
+                width: 2.5rem;
+                transform: rotate(-70deg);
+
+                @media #{$mq-md-min} {
+                    width: 4rem;
+                    left: -1rem;
+                }
+            }
+
+            .leafBottom {
+                position: absolute;
+                z-index: 2;
+                right: 0;
+                bottom: -1rem;
+                width: 3.5rem;
+                color: $green;
+
+                @media #{$mq-md-min} {
+                    width: 5rem;
+                    bottom: -2rem;
+                }
+            }
+
+            .photo {
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+                display: block;
+                width: 100%;
+                height: 70vw;
+                border-top-left-radius: 1rem;
+                border-bottom-left-radius: 1rem;
+
+                @media #{$mq-md-min} {
+                    height: auto;
+                    aspect-ratio: 4 / 3;
+                    min-height: 100%;
+                    border-top-left-radius: 2rem;
+                    border-bottom-left-radius: 2rem;
+                }
+            }
+        }
+    }
+}

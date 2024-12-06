@@ -1,0 +1,18 @@
+.services {
+    .blocks {
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+
+            @media #{$mq-lg-min} {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @media #{$mq-xl-min} {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.5rem;
+            }
+        }
+    }
+}

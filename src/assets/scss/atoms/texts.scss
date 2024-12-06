@@ -1,0 +1,131 @@
+@use '../variables' as *;
+
+.font-body { font-family: $font-body; }
+.font-title { font-family: $font-title; }
+
+.h1,
+.h2,
+.h3,
+.h4 {
+	font-family: $font-title;
+	font-weight: $regular;
+}
+
+.text-84,
+.h1 {
+	font-size: 3.75rem;
+	line-height: 1;
+
+	@media #{$mq-xs-min} {
+		font-size: 4rem;
+	}
+
+	@media #{$mq-sm-min} {
+		font-size: 4.25rem;
+	}
+
+	@media #{$mq-md-min} {
+		font-size: 4.5rem;
+	}
+
+	@media #{$mq-lg-min} {
+		font-size: 4.75rem;
+	}
+
+	@media #{$mq-xl-min} {
+		font-size: 5rem;
+	}
+
+	@media #{$mq-2xl-min} {
+		font-size: 5.25rem;
+	}
+}
+
+.text-56,
+.h2 {
+	font-size: 2.5rem;
+	line-height: 1;
+
+	@media #{$mq-sm-min} {
+		font-size: 2.75rem;
+	}
+
+	@media #{$mq-md-min} {
+		font-size: 3rem;
+	}
+
+	@media #{$mq-lg-min} {
+		font-size: 3.25rem;
+	}
+
+	@media #{$mq-xl-min} {
+		font-size: 3.5rem;
+	}
+}
+
+.text-48,
+.h3 {
+	font-size: 2rem;
+	line-height: 1;
+
+	@media #{$mq-sm-min} {
+		font-size: 2.25rem;
+	}
+
+	@media #{$mq-md-min} {
+		font-size: 2.75rem;
+	}
+
+	@media #{$mq-lg-min} {
+		font-size: 3rem;
+	}
+}
+
+.text-32,
+.h4 {
+	font-size: 1.5rem;
+	line-height: 1.2;
+
+	@media #{$mq-md-min} {
+		font-size: 1.75rem;
+		line-height: 1.1;
+	}
+
+	@media #{$mq-lg-min} {
+		font-size: 2rem;
+	}
+}
+
+.text-24 {
+	font-size: 1.25rem;
+	line-height: 1.2;
+
+	@media #{$mq-md-min} {
+		font-size: 1.5rem;
+	}
+}
+
+.text-20 {
+	font-size: 1.1rem;
+
+	@media #{$mq-md-min} {
+		font-size: 1.25rem;
+		line-height: 1.4;
+	}
+}
+
+.text-18 {
+	font-size: 1.1rem;
+
+	@media #{$mq-md-min} {
+		font-size: 1.13rem;
+	}
+}
+
+.text-16 {
+	font-size: 1rem;
+}
+
+.text-14 {
+	font-size: .875rem;
+}

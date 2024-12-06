@@ -1,0 +1,28 @@
+.bookMyAppointment {
+	border-top-left-radius: 2rem;
+	border-top-right-radius: 2rem;
+
+	.wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+		gap: var(--smallest);
+		text-align: center;
+
+		@media #{$mq-md-min} {
+			flex-direction: row;
+			text-align: left;
+			gap: 2rem;
+		}
+
+		@media #{$mq-xl-min} {
+			width: 90%;
+			margin: auto;
+		}
+
+		@media #{$mq-2xl-min} {
+			width: 85%;
+		}
+	}
+}

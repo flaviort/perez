@@ -1,0 +1,205 @@
+.servicesInner {
+    .pageTitle {
+        .box {
+            position: relative;
+            overflow: hidden;
+            display: block;
+            width: 100%;
+            border-top-right-radius: 1rem;
+
+            @media #{$mq-md-min} {
+                border-top-right-radius: 2rem;
+            }
+        }
+    }
+
+    .banner {
+        position: relative;
+        overflow: hidden;
+
+        .leafOutline {
+            position: absolute;
+            top: 1rem;
+            left: -2rem;
+            width: 6rem;
+
+            @media #{$mq-md-min} {
+                top: 2rem;
+                width: 8rem;
+            }
+
+            @media #{$mq-lg-min} {
+                top: 3rem;
+            }
+        }
+
+        .left {
+            position: relative;
+
+            .leafInner {
+                position: absolute;
+                z-index: 2;
+                bottom: -1rem;
+                right: 0;
+                color: $green;
+                width: 4rem;
+
+                @media #{$mq-md-min} {
+                    bottom: 0;
+                    right: 1rem;
+                }
+
+                @media #{$mq-lg-min} {
+                    bottom: .5rem;
+                    right: .5rem;
+                }
+            }
+
+            .photo {
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+                display: block;
+                width: 100%;
+                aspect-ratio: 1;
+                min-height: 100%;
+                border-radius: 1rem;
+                border-top-right-radius: 0;
+
+                @media #{$mq-xs-min} {
+                    aspect-ratio: 4 / 3;
+                }
+
+                @media #{$mq-md-min} {
+                    aspect-ratio: 4 / 2.75;
+                    border-radius: 2rem;
+                    border-top-right-radius: 0;
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+
+            @media #{$mq-md-max} {
+                padding-top: var(--smaller);
+            }
+
+            .wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        .accordions {
+            display: grid;
+            gap: .5rem;
+        }
+    }
+
+    .imageText {
+        position: relative;
+        overflow: hidden;
+
+        &.hasGradientTop {
+            &:before {
+                @include gradient-top($gray-lightest, 100%);
+            }
+        }
+
+        .image {
+            position: relative;
+
+            .leafInner {
+                position: absolute;
+                z-index: 2;
+                bottom: -1rem;
+                right: 0;
+                color: $green;
+                width: 4rem;
+
+                @media #{$mq-md-min} {
+                    bottom: 0;
+                    right: 1rem;
+                }
+
+                @media #{$mq-lg-min} {
+                    bottom: .5rem;
+                    right: .5rem;
+                }
+            }
+
+            .photo {
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+                display: block;
+                width: 100%;
+                aspect-ratio: 1;
+                min-height: 100%;
+                border-radius: 1rem;
+                border-top-right-radius: 0;
+
+                @media #{$mq-xs-min} {
+                    aspect-ratio: 4 / 3;
+                }
+
+                @media #{$mq-md-min} {
+                    aspect-ratio: 4 / 2.75;
+                    border-radius: 2rem;
+                    border-top-right-radius: 0;
+                }
+            }
+        }
+
+        .text {
+            display: flex;
+            align-items: center;
+
+            @media #{$mq-md-max} {
+                padding-top: var(--smaller);
+            }
+
+            .wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        .center {
+            @media #{$mq-md-min} {
+                text-align: center;
+            }
+        }
+    }
+
+    .accordion {
+        .title {
+            @media #{$mq-md-min} {
+                text-align: center;
+            }
+        }
+
+        .center {
+            @media #{$mq-md-min} {
+                text-align: center;
+            }
+        }
+
+        .accordions {
+            display: grid;
+            gap: 1rem;
+        }
+    }
+
+    .testimonials {
+        h2 {
+            @media #{$mq-md-max} {
+                text-align: left;
+            }
+        }
+    }
+}

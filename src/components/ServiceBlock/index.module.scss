@@ -1,0 +1,48 @@
+.serviceBlock {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	min-height: 50vw;
+	border-top-right-radius: 1.5rem;
+	border-bottom-left-radius: 1.5rem;
+	padding: 2rem;
+
+	@media #{$mq-sm-min} {
+		border-top-right-radius: 2.5rem;
+		border-bottom-left-radius: 2.5rem;
+		padding: 3rem;
+		aspect-ratio: 4 / 3;
+		height: auto;
+		min-height: auto;
+	}
+
+	&:before {
+		@include gradient-bottom(rgba($black, .9), 100%);
+		transition: .6s ease-in-out;
+	}
+
+	&:hover,
+	&:focus {
+		&:before {
+			height: 175%;
+		}
+
+		.image {
+			transform: scale(1.1) rotate(2deg);
+		}
+	}
+
+	.image {
+		transition: .6s ease-in-out;
+	}
+
+	.title {
+		position: relative;
+		z-index: 2;
+		color: $white;
+	}
+}

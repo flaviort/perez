@@ -1,0 +1,75 @@
+.threeComponents {
+	padding: var(--small) 0;
+
+	.greenBox {
+		background-color: $green;
+		color: $white;
+		padding: var(--small);
+		border-top-right-radius: 1rem;
+
+		@media #{$mq-sm-min} {
+			border-top-right-radius: 2rem;
+		}
+
+		@media #{$mq-md-min} {
+			border-top-right-radius: 3rem;
+			text-align: center;
+		}
+
+		@media #{$mq-lg-min} {
+			border-top-right-radius: 4rem;
+		}
+
+		.grid {
+			display: grid;
+			align-items: center;
+			gap: var(--smaller);
+			margin: var(--smaller) auto;
+
+			@media #{$mq-md-min} {
+				justify-content: center;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 1rem;
+			}
+
+			.block {
+				display: flex;
+				align-items: center;
+
+				@media #{$mq-md-min} {
+					flex-direction: column;
+					justify-content: center;
+				}
+
+				img {
+					width: 4.25rem;
+					height: 4.25rem;
+					object-fit: contain;
+					margin-right: var(--smallest);
+
+					@media #{$mq-md-min} {
+						width: 5.5rem;
+						height: 5.5rem;
+						margin-right: 0;
+					}
+				}
+
+				h3 {
+					display: block;
+					margin-bottom: .25rem;
+
+					@media #{$mq-md-min} {
+						margin-top: 1.5rem;
+					}
+				}
+			}
+		}
+
+		.bottom {
+			@media #{$mq-md-max} {
+				font-size: 1rem;
+				line-height: 1.6;
+			}
+		}
+	}
+}

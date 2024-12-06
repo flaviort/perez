@@ -1,0 +1,288 @@
+.topMenu {
+	position: relative;
+	z-index: 99;
+	padding-top: 1rem;
+
+	.flex {
+		display: flex;
+		justify-content: space-between;
+
+		.logo {
+			display: flex;
+			width: 11rem;
+			min-width: 10rem;
+			transition: .6s ease-in-out;
+
+			@media #{$mq-md-min} {
+				width: 13rem;
+			}
+
+			@media #{$mq-2xl-min} {
+				width: 16rem;
+			}
+
+			&:hover,
+			&:focus-visible {
+				opacity: .8;
+			}
+
+			svg {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		.right {
+			display: flex;
+			align-items: center;
+			gap: .5rem;
+
+			@media #{$mq-xl-min} {
+				gap: 2rem;
+			}
+
+			@media #{$mq-2xl-min} {
+				gap: 3rem;
+			}
+
+			.menu {
+				display: none;
+				align-items: center;
+				gap: 1rem;
+
+				@media #{$mq-xl-min} {
+					display: flex;
+				}
+
+				@media #{$mq-2xl-min} {
+					gap: 1.5rem;
+				}
+
+				a {
+					font-weight: $bold;
+				}
+			}
+
+			.contact {
+				display: none;
+				padding: 1rem 1.5rem .875rem 1.5rem;
+				border: var(--1px) solid $white;
+
+				@media #{$mq-xs-min} {
+					display: flex;
+				}
+
+				@media #{$mq-sm-min} {
+					padding: 1rem 2rem .875rem 2rem;
+				}
+
+				&:hover,
+				&:focus-visible {
+					background-color: $gray-darker;
+					color: $white;
+					border-color: transparent;
+				}
+			}
+
+			.openFs {
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				width: 3.25rem;
+				min-width: 3.25rem;
+				height: 3.25rem;
+				gap: .325rem;
+				border-radius: 50%;
+				background-color: $gray-darker;
+				padding: .75rem;
+
+				@media #{$mq-md-min} {
+					width: 3.5rem;
+					min-width: 3.5rem;
+					height: 3.5rem;
+				}
+
+				@media #{$mq-xl-min} {
+					display: none;
+				}
+
+				&.active {
+					> span:not(.open) {
+						opacity: 0;
+
+						&:first-child {
+							transform: translateY(calc(.325rem + var(--1px)));
+						}
+
+						&:nth-child(3) {
+							transform: translateY(calc(-.325rem - var(--1px)));
+						}
+					}
+
+					.open {
+						span {
+							&:first-child {
+								opacity: 1;
+								transform: none;
+							}
+
+							&:last-child {
+								opacity: 1;
+								transform: rotate(90deg);
+							}
+						}
+					}
+				}
+
+				> span:not(.open) {
+					display: block;
+					width: 100%;
+					height: var(--1px);
+					background-color: $white;
+					transition: .3s ease-in-out;
+				}
+
+				.open {
+					position: absolute;
+					overflow: hidden;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					transform: rotate(45deg);
+
+					span {
+						display: block;
+						width: 50%;
+						height: calc(var(--1px) * 1);
+						background-color: $white;
+						transition: .3s ease-in-out;
+
+						&:first-child {
+							transform: translateX(-50%);
+							opacity: 0;
+						}
+
+						&:last-child {
+							position: absolute;
+							transform: rotate(90deg) translateX(-50%);
+							opacity: 0;
+							transition-delay: .1s;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.fsMenu {
+	position: fixed;
+	z-index: 98;
+	top: 0;
+	left: 0;
+	background-color: $green;
+	color: $white;
+	width: 100%;
+	height: 100%;
+	clip-path: inset(0 0 100% 0);
+	padding-top: 7rem;
+	display: flex;
+	overflow-y: hidden;
+	
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	
+	&::-webkit-scrollbar-thumb {
+		background: $gray-darker;
+		border-radius: 0;
+	}
+
+	&:before {
+		@include gradient-top($green, 10rem);
+		position: fixed;
+		z-index: 3;
+		pointer-events: none;
+	}
+
+	> div {
+		position: relative;
+		z-index: 2;
+		height: auto;
+	}
+
+	.flex {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+		padding-top: 2rem;
+		gap: 2rem;
+
+		@media #{$mq-xs-min} {
+			padding-top: 3rem;
+		}
+
+		.menu {
+			display: grid;
+			row-gap: 1rem;
+
+			@media #{$mq-sm-min} {
+				grid-template-columns: 1fr 1fr;
+			}
+
+			a {
+				transition: .3s ease-in-out;
+
+				&:hover,
+				&:focus-visible {
+					color: $gray-light;
+				}
+
+				@media #{$mq-xs-max} {
+					font-size: 2.5rem;
+				}
+			}
+		}
+
+		.social {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			padding-bottom: 2rem;
+
+			@media #{$mq-xs-min} {
+				padding-bottom: 3rem;
+			}
+
+			a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 3rem;
+				min-width: 3rem;
+				height: 3rem;
+				border-radius: 50%;
+				border: var(--1px) solid $white;
+				padding: .75rem;
+				transition: .3s ease-in-out;
+
+				&:hover,
+				&:focus-visible {
+					background-color: $white;
+					color: $green;
+				}
+
+				svg {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

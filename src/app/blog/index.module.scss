@@ -1,0 +1,65 @@
+.blogs {
+    .banner {
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            margin: var(--smallest) 0 0 -.25rem;
+
+            @media #{$mq-md-min} {
+                flex-direction: column;
+            }
+
+            @media #{$mq-lg-min} {
+                flex-direction: row;
+            }
+
+            button {
+                @media #{$mq-md-min} {
+                    width: 100%;
+                }
+
+                @media #{$mq-lg-min} {
+                    width: auto;
+                }
+
+                &.active {
+                    background-color: $white;
+                    color: $green;
+                }
+            }
+        }
+    }
+
+    .articles {
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+
+            @media #{$mq-md-min} {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            @media #{$mq-xl-min} {
+                gap: 1.5rem;
+            }
+            
+            &.videos,
+            &.blogs {
+                a {
+                    aspect-ratio: unset;
+                    min-height: 80vw;
+
+                    @media #{$mq-sm-min} {
+                        min-height: 60vw;
+                    }
+
+                    @media #{$mq-md-min} {
+                        min-height: 25vw;
+                    }
+                }
+            }
+        }
+    }
+}

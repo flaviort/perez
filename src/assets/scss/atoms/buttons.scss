@@ -1,0 +1,142 @@
+@use '../variables' as *;
+
+.hover-underline {
+    cursor: pointer;
+    --border-color: currentColor;
+    --border-width: var(--1px);
+    --bottom-distance: 0px;
+    display: inline;
+    background-image: linear-gradient(var(--border-color), var(--border-color));
+    background-size: 0% var(--border-width);
+    background-repeat: no-repeat;
+    transition: background-size .3s ease-in-out;
+    background-position: 0 calc(100% - var(--bottom-distance));
+    width: fit-content;
+
+    &:hover,
+    &:focus-visible,
+    &.active {
+        background-size: 100% var(--border-width);
+    }
+}
+
+.button {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    border-radius: 5rem;
+    text-align: center;
+    padding: 1rem 2rem;
+    width: fit-content;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    white-space: nowrap;
+    line-height: 1;
+
+    @media #{$mq-md-min} {
+        padding: 1rem 3rem;
+    }
+
+    &--green {
+        background-color: $green;
+        color: $white;
+
+        &:hover,
+        &:focus-visible {
+            background-color: $white;
+            color: $gray-dark;
+        }
+    }
+
+    &--hollow-green {
+        border: var(--1px) solid $green;
+        color: $green;
+
+        &:hover,
+        &:focus-visible {
+            background-color: $green;
+            color: $white;
+        }
+    }
+
+    &--hollow {
+        border: var(--1px) solid $gray-darker;
+        color: $gray-darker;
+
+        &:hover,
+        &:focus-visible {
+            background-color: $gray-darker;
+            color: $white;
+        }
+    }
+
+    &--hollow-white {
+        border: var(--1px) solid $white;
+        color: $white;
+
+        &:hover,
+        &:focus-visible {
+            background-color: $white;
+            color: $green;
+        }
+    }
+
+    &--green-dark-hover {
+        background-color: $green;
+        color: $white;
+
+        &:hover,
+        &:focus-visible {
+            background-color: $gray-darker;
+            color: $white;
+        }
+    }
+
+    &--dark {
+        background-color: $gray-darker;
+        color: $white;
+
+        &:hover,
+        &:focus-visible {
+            background-color: $black;
+            color: $white;
+        }
+    }
+
+    &__text {
+
+    }
+
+    &__loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        pointer-events: none;
+        opacity: 0;
+        transition: .3s ease-in-out;
+
+        > span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+
+            svg {
+                width: auto;
+                height: 100%;
+            }
+        }
+    }
+}
