@@ -60,8 +60,11 @@ export const Form = ({
             (form.current as HTMLElement).classList.add('sending')
         }
 
-        fetch('../../api/sendgrid', {
+        fetch('/api/', {
             method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+            },
             body: JSON.stringify(data)
         })
 
