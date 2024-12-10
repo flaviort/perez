@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 // components
 import Menu from '@/components/Menu'
+import Chatbot from '@/components/Chatbot'
 import Footer from '@/components/Footer'
 
 // css
@@ -74,6 +75,8 @@ export default function RootLayout({
 				<div id='main-content'>
 					{children}
 				</div>
+
+				<Chatbot />
 
 				<Footer />
 				

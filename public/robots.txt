@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.drericaperez.com
+
+# Sitemaps
+Sitemap: https://www.drericaperez.com/sitemap.xml

@@ -64,6 +64,7 @@
     }
 
     &--hollow {
+        background-color: transparent;
         border: var(--1px) solid $gray-darker;
         color: $gray-darker;
 

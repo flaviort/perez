@@ -1,0 +1,74 @@
+.schedule {
+    .form {
+        text-align: center;
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            button {
+                &.active {
+                    background-color: $gray-darker;
+                    color: $white;
+                }
+            }
+        }
+
+        .wrapper {
+            position: relative;
+
+            .inner {
+                &:not(.active) {
+                    position: absolute;
+                    opacity: 0;
+                    visibility: hidden;
+                    pointer-events: none;
+                    top: 0;
+                    left: 0;
+                    max-height: 1px;
+                    clip-path: inset(0 0 100% 0);
+                }
+
+                &.existing {
+                    a {
+                        position: relative;
+                        z-index: 1;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: .75rem;
+                        border-radius: 5rem;
+                        text-align: center;
+                        padding: 1rem 2rem;
+                        width: fit-content;
+                        cursor: pointer;
+                        transition: .3s ease-in-out;
+                        white-space: nowrap;
+                        line-height: 1;
+                        background-color: $green;
+                        color: $white;
+                        font-family: $font-title;
+                        font-size: 1.25rem;
+	                    line-height: 1.2;
+                        margin-left: auto;
+                        margin-right: auto;
+                    
+                        @media #{$mq-md-min} {
+                            padding: 1rem 3rem;
+                            font-size: 1.5rem;
+                        }
+
+                        &:hover,
+                        &:focus-visible {
+                            background-color: $gray-darker;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
