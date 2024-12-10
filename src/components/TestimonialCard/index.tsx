@@ -11,6 +11,9 @@ import { Play } from '@/assets/svg/ux'
 // css
 import styles from './index.module.scss'
 
+// utils
+import { placeholder } from '@/utils/functions'
+
 // interface
 export interface TestimonialCardProps {
     name: string
@@ -46,6 +49,7 @@ export default function TestimonialCard({
                     src={image.url && image.url}
                     alt={name && name || ''}
                     fill
+                    placeholder={`data:image/svg+xml;base64,${placeholder()}`}
                     priority={image.priority}
                     sizes='
                         (min-width: 993px) 33vw,

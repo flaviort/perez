@@ -10,7 +10,6 @@ import BookMyAppointment from '@/components/BookMyAppointment'
 
 // images
 import banner from '@/assets/img/services/plantar.jpg'
-import foot from '@/assets/img/services/foot.jpg'
 import foot_02 from '@/assets/img/services/foot-2.jpg'
 
 // svg
@@ -18,6 +17,9 @@ import { Leaf, LeafOutline } from '@/assets/svg/others'
 
 // css
 import styles from '../index-inner.module.scss'
+
+// utils
+import { placeholder } from '@/utils/functions'
 
 export const metadata = {
 	title: 'Plantar Fasciitis | Services | Perez Wellness'
@@ -53,6 +55,8 @@ export default function Plantar() {
 									src={banner}
 									alt='Plantar Fasciitis'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 50vw,
 										95vw
@@ -121,6 +125,8 @@ export default function Plantar() {
 									src={foot_02}
 									alt='Plantar Fasciitis'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 50vw,
 										95vw

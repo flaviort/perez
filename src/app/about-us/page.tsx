@@ -19,6 +19,9 @@ import { Leaf, LeafOutline } from '@/assets/svg/others'
 // css
 import styles from './index.module.scss'
 
+// utils
+import { placeholder } from '@/utils/functions'
+
 export const metadata = {
 	title: 'About Us | Perez Wellness'
 }
@@ -44,6 +47,8 @@ export default function AboutUs() {
 									src={banner}
 									alt='Dra Erica Perez clinic entrance'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 60vw,
 										95vw
@@ -98,6 +103,8 @@ export default function AboutUs() {
 										src={about}
 										alt='Dra Erica Perez'
 										fill
+										loading='lazy'
+                        				placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 										sizes='
 											(min-width: 993px) 50vw,
 											95vw
@@ -138,6 +145,8 @@ export default function AboutUs() {
 									src={approach_01}
 									alt='Dra Erica Perez'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 30vw,
 										50vw
@@ -151,6 +160,8 @@ export default function AboutUs() {
 									src={approach_02}
 									alt='Dra Erica Perez'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 30vw,
 										50vw
@@ -199,6 +210,8 @@ export default function AboutUs() {
 									src={vision}
 									alt='Dra Erica Perez'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 30vw,
 										50vw

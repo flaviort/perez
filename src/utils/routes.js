@@ -38,7 +38,7 @@ export const social = {
 export const contact = {
 	phone: '(214) 823-2511',
 	phone_02: '(214) 823-2581',
-	email: 'flavioczuk@gmail.com',
+	email: 'contact@drericaperez.com',
 	address: '8080 N. Central Expressway, Suite 160 Dallas, TX 75206',
 	gmaps: 'https://maps.app.goo.gl/hm9z1bQJH1QeGsRd7'
 }

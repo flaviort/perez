@@ -11,7 +11,6 @@ import BookMyAppointment from '@/components/BookMyAppointment'
 
 // images
 import banner from '@/assets/img/services/knee-pain.jpg'
-import hand from '@/assets/img/services/hand.jpg'
 import knee from '@/assets/img/services/knee.jpg'
 
 // svg
@@ -19,6 +18,9 @@ import { Leaf, LeafOutline } from '@/assets/svg/others'
 
 // css
 import styles from '../index-inner.module.scss'
+
+// utils
+import { placeholder } from '@/utils/functions'
 
 export const metadata = {
 	title: 'Knee Pain | Services | Perez Wellness'
@@ -54,6 +56,8 @@ export default function KneePain() {
 									src={banner}
 									alt='Knee Pain'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 50vw,
 										95vw
@@ -96,6 +100,8 @@ export default function KneePain() {
 									src={knee}
 									alt='Knee Pain'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 50vw,
 										95vw

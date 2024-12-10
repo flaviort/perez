@@ -6,7 +6,6 @@ import clsx from 'clsx'
 
 // components
 import InternalBanner from '@/components/InternalBanner'
-import BookMyAppointment from '@/components/BookMyAppointment'
 import FeaturedArticle from '@/components/FeaturedArticle'
 
 // images
@@ -17,9 +16,8 @@ import styles from './index.module.scss'
 
 // db
 import { videos } from '@/db/videos'
-import { blogs } from '@/db/blogs'
 
-export default function Blogs() {
+export default function AllBlogs({ posts }: { posts: any[] }) {
 
 	const [toggleMedia, setToggleMedia] = useState<'video' | 'blog'>('video')
 
@@ -28,12 +26,12 @@ export default function Blogs() {
 	}
 
 	return (
-		<main className={styles.blogs}>
+		<>
 
 			<InternalBanner
 				className={styles.banner}
 				image={banner.src}
-				title='Videos / News'
+				title='Videos / Blog'
 			>
 				<div className={styles.buttons}>
 
@@ -43,7 +41,7 @@ export default function Blogs() {
 							slug: 'video'
 						},
 						{
-							title: 'News',
+							title: 'Blog',
 							slug: 'blog'
 						}
 					].map((item, i) => {
@@ -85,12 +83,16 @@ export default function Blogs() {
 							/>
 						))}
 
-						{toggleMedia === 'blog' && blogs.map((item, i) => (
+						{toggleMedia === 'blog' && posts.map((item: {
+							featuredImage: any,
+							title: string,
+							slug: string
+						}, i: number) => (
 							<FeaturedArticle
 								key={i}
-								image={item.image}
-								title={item.title}
-								href={item.href}
+								image={item.featuredImage?.node?.sourceUrl}
+                                title={item.title}
+                                href={`/blog/${item.slug}`}
 							/>
 						))}
 
@@ -98,8 +100,6 @@ export default function Blogs() {
 				</div>
 			</section>
 
-			<BookMyAppointment />
-
-		</main>
+		</>
 	)
 }

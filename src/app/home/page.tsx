@@ -1,20 +1,13 @@
-'use client'
-
 // libraries
-import { useState, useRef } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Swiper as SwiperCore } from 'swiper/types'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Mousewheel, Pagination } from 'swiper/modules'
-import 'swiper/css'
 
 // components
 import Marquee from '@/components/Marquee'
-import FeaturedArticle from '@/components/FeaturedArticle'
-import BookMyAppointment from '@/components/BookMyAppointment'
+import News from './news'
 import TestimonialsSlider from '@/components/TestimonialsSlider'
+import BookMyAppointment from '@/components/BookMyAppointment'
 
 // images
 import about from '@/assets/img/photo-03.jpg'
@@ -25,24 +18,18 @@ import services_02 from '@/assets/img/photo-06.jpg'
 import { Leaf, LeafOutline } from '@/assets/svg/others'
 
 // data / utils
-import { videos } from '@/db/videos'
-import { blogs } from '@/db/blogs'
 import { pages } from '@/utils/routes'
+import { placeholder } from '@/utils/functions'
 
 // css
 import styles from './index.module.scss'
 
-export default function Home() {
+// graphql
+import { getPosts } from '@/utils/graphql'
 
-	const sliderRef = useRef<SwiperCore | null>(null)
-	const [videoOrBlog, setVideoOrBlog] = useState<'video' | 'blog'>('video')
+export default async function Home() {
 
-	const toggleVideoOrBlog = (type: 'video' | 'blog') => {
-        setVideoOrBlog(type)
-		if (sliderRef.current) {
-			sliderRef.current.slideTo(0);
-		}
-    }
+	const posts = await getPosts()
 
 	return (
 		<main className={styles.home}>
@@ -112,6 +99,8 @@ export default function Home() {
 									src={about}
 									alt='Photo of a patient being treated by Dra Erica Perez'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 45vw,
 										95vw
@@ -188,6 +177,8 @@ export default function Home() {
 											src={services_01}
 											alt='Dra Erica Perez treating a client'
 											fill
+											loading='lazy'
+                        					placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 											sizes='
 												(min-width: 993px) 20vw,
 												45vw
@@ -201,6 +192,8 @@ export default function Home() {
 											src={services_02}
 											alt='Dra Erica Perez'
 											fill
+											loading='lazy'
+                        					placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 											sizes='
 												(min-width: 993px) 20vw,
 												45vw
@@ -219,93 +212,7 @@ export default function Home() {
 
 			</section>
 
-			<section className={clsx(styles.blog, 'mt-small pt-small')}>
-
-				<div className={styles.bg}></div>
-
-				<Leaf className={styles.leaf} />
-				<LeafOutline className={styles.leafOutlineLeft} />
-				<LeafOutline className={styles.leafOutlineRight} />
-
-				<div className='container relative z2'>
-
-					<div className={styles.top}>
-
-						<h2 className={clsx('h2', styles.title)}>
-							News
-						</h2>
-
-						<div className={styles.buttons}>
-
-							<button
-								type='button'
-								className={clsx(
-									'button button--hollow font-title text-24',
-									videoOrBlog === 'video' && styles.active
-								)}
-								onClick={() => toggleVideoOrBlog('video')}
-							>
-								Video
-							</button>
-
-							<button
-								type='button'
-								className={clsx(
-									'button button--hollow font-title text-24',
-									videoOrBlog === 'blog' && styles.active
-								)}
-								onClick={() => toggleVideoOrBlog('blog')}
-							>
-								Blog
-							</button>
-
-						</div>
-
-					</div>
-
-					<Swiper
-						modules={[Mousewheel, Pagination]}
-						className={styles.slider}
-						spaceBetween={20}
-						slidesPerView={1}
-						loop={false}
-						mousewheel={{  
-							forceToAxis: true
-						}}
-						onSwiper={(swiper) => (sliderRef.current = swiper)}
-						pagination={{
-							type: 'bullets',
-							clickable: true,
-							el: '.blogs-pagination',
-						}}
-					>
-						{videoOrBlog === 'video' && videos.slice(0, 3).map((item, i) => (
-							<SwiperSlide key={i}>
-								<FeaturedArticle
-									title={item.title}
-									image={item.image}
-									videoUrl={item.videoUrl}
-								/>
-							</SwiperSlide>
-						))}
-
-						{videoOrBlog === 'blog' && blogs.slice(0, 3).map((item, i) => (
-							<SwiperSlide key={i}>
-								<FeaturedArticle
-									title={item.title}
-									image={item.image}
-									href={item.href}
-								/>
-							</SwiperSlide>
-						))}
-
-						<div className='blogs-pagination' />
-						
-					</Swiper>
-
-				</div>
-
-			</section>
+			<News posts={posts} />
 
 			<TestimonialsSlider
 				className='py-small'

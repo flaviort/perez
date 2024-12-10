@@ -45,6 +45,7 @@ export default function ThreeComponents() {
                                     alt={item.title}
                                     width={120}
                                     height={120}
+                                    loading='lazy'
                                 />
 
                                 <div>

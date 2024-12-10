@@ -19,6 +19,9 @@ import { Leaf, LeafOutline } from '@/assets/svg/others'
 // css
 import styles from '../index-inner.module.scss'
 
+// utils
+import { placeholder } from '@/utils/functions'
+
 export const metadata = {
 	title: 'Disc Therapy | Services | Perez Wellness'
 }
@@ -53,6 +56,8 @@ export default function DiscTherapy() {
 									src={banner}
 									alt='Disc Therapy'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 50vw,
 										95vw
@@ -126,6 +131,8 @@ export default function DiscTherapy() {
 									src={back_pain}
 									alt='Back Pain'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 50vw,
 										95vw
@@ -199,6 +206,8 @@ export default function DiscTherapy() {
 									src={skeleton}
 									alt='Skeleton'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 50vw,
 										95vw

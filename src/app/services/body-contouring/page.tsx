@@ -18,6 +18,9 @@ import { Leaf, LeafOutline } from '@/assets/svg/others'
 // css
 import styles from '../index-inner.module.scss'
 
+// utils
+import { placeholder } from '@/utils/functions'
+
 export const metadata = {
 	title: 'Body Contouring | Services | Perez Wellness'
 }
@@ -52,6 +55,8 @@ export default function BodyContouring() {
 									src={banner}
 									alt='Body Contouring'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 50vw,
 										95vw
@@ -185,6 +190,8 @@ export default function BodyContouring() {
 									src={molecule}
 									alt='The Technology'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 50vw,
 										95vw

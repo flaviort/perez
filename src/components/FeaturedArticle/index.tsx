@@ -9,13 +9,13 @@ import Fancybox from '@/components/utils/fancybox'
 // css
 import styles from './index.module.scss'
 
+// utils
+import { placeholder } from '@/utils/functions'
+
 // interface
 export interface FeaturedArticleProps {
     title: string
-    image: {
-        url: string
-        priority?: boolean
-    }
+    image: string
     videoUrl?: string
     href?: string
 }
@@ -43,10 +43,11 @@ export default function FeaturedArticle({
                 >
 
                     <Image
-                        src={image.url && image.url}
+                        src={image}
                         alt={title && title || ''}
                         fill
-                        priority={image.priority}
+                        loading='lazy'
+                        placeholder={`data:image/svg+xml;base64,${placeholder()}`}
                         sizes='
                             (min-width: 993px) 80vw,
                             95vw
@@ -78,10 +79,11 @@ export default function FeaturedArticle({
                 className={styles.featuredArticle}
             >
                 <Image
-                    src={image.url && image.url}
+                    src={image}
                     alt={title && title || ''}
                     fill
-                    priority={image.priority}
+                    loading='lazy'
+                    placeholder={`data:image/svg+xml;base64,${placeholder()}`}
                     sizes='
                         (min-width: 993px) 80vw,
                         95vw

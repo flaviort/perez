@@ -6,6 +6,9 @@ import Link from 'next/link'
 // css
 import styles from './index.module.scss'
 
+// utils
+import { placeholder } from '@/utils/functions'
+
 // interface
 export interface ServiceBlockProps {
     title: string
@@ -27,6 +30,8 @@ export default function ServiceBlock({
                 src={image && image}
                 alt={title && title || ''}
                 fill
+                loading='lazy'
+                placeholder={`data:image/svg+xml;base64,${placeholder()}`}
                 sizes='
                     (min-width: 993px) 30vw,
                     (min-width: 993px) 50vw,

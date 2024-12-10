@@ -17,6 +17,9 @@ import { Leaf, LeafOutline } from '@/assets/svg/others'
 // css
 import styles from '../index-inner.module.scss'
 
+// utils
+import { placeholder } from '@/utils/functions'
+
 export const metadata = {
 	title: 'Chiropractic | Services | Perez Wellness'
 }
@@ -51,6 +54,8 @@ export default function Chiropractic() {
 									src={banner}
 									alt='Chiropractic'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 50vw,
 										95vw
@@ -107,6 +112,8 @@ export default function Chiropractic() {
 									src={skeleton}
 									alt='Skeleton'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 50vw,
 										95vw

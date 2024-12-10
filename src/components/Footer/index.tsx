@@ -26,6 +26,7 @@ export default function Footer() {
                                 src={logo}
                                 width={220}
                                 alt='Perez Wellness'
+                                loading='lazy'
                             />
                         </Link>
                     </div>

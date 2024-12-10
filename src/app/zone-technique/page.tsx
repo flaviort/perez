@@ -28,6 +28,9 @@ import { Play } from '@/assets/svg/ux'
 // css
 import styles from './index.module.scss'
 
+// utils
+import { placeholder } from '@/utils/functions'
+
 // metadata
 export const metadata = {
 	title: 'Zone Technique | Perez Wellness'
@@ -193,6 +196,8 @@ export default function ZoneTechnique() {
 											alt={item.title}
 											width={350}
 											height={525}
+											loading='lazy'
+                        					placeholder={`data:image/svg+xml;base64,${placeholder('light')}`}
 										/>
 									</div>
 
@@ -219,6 +224,8 @@ export default function ZoneTechnique() {
 													src={item.video.image}
 													alt='Dra Erica Perez'
 													fill
+													loading='lazy'
+                        							placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 													sizes='
 														(min-width: 993px) 30vw,
 														(min-width: 768px) 50vw,

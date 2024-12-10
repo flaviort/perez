@@ -8,6 +8,9 @@ import { Leaf, LeafOutline } from '@/assets/svg/others'
 // css
 import styles from './index.module.scss'
 
+// utils
+import { placeholder } from '@/utils/functions'
+
 // interface
 export interface InternalBannerProps {
     className?: string
@@ -50,6 +53,7 @@ export default function InternalBanner({
                                     alt={title && title || ''}
                                     fill
                                     priority
+                                    placeholder={`data:image/svg+xml;base64,${placeholder()}`}
                                     sizes='
                                         (min-width: 993px) 50vw,
                                         98vw

@@ -13,7 +13,15 @@ const nextConfig = {
 	},
 	eslint: {
 		ignoreDuringBuilds: true,
-	}
+	},
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'drericaperez.com'
+		  	},
+		]
+	},
 }
 
 export default nextConfig

@@ -20,6 +20,9 @@ import { Leaf, LeafOutline } from '@/assets/svg/others'
 // css
 import styles from '../index-inner.module.scss'
 
+// utils
+import { placeholder } from '@/utils/functions'
+
 export const metadata = {
 	title: 'Neuropathy | Services | Perez Wellness'
 }
@@ -54,6 +57,8 @@ export default function Neuropathy() {
 									src={banner}
 									alt='Dra Erica Perez treating a client'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 50vw,
 										95vw
@@ -95,6 +100,8 @@ export default function Neuropathy() {
 									src={foot}
 									alt='Foot injury'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 50vw,
 										95vw
@@ -183,6 +190,8 @@ export default function Neuropathy() {
 									src={hand}
 									alt='Hand injury'
 									fill
+									loading='lazy'
+                        			placeholder={`data:image/svg+xml;base64,${placeholder()}`}
 									sizes='
 										(min-width: 993px) 50vw,
 										95vw
